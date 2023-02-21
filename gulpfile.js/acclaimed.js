@@ -3,14 +3,14 @@ const isUrl = require('is-url')
 const Axios = require('axios')
 const Penthouse = require('penthouse')
 
-const criticalConfig = require('./.critical.json')
+const criticalConfig = require('./.acclaimed.json')
 
 if (criticalConfig.length > 9) {
   process.setMaxListeners(0)
 }
 
 // Will extract Critical CSS
-async function criticalStart(cb) {
+async function critical(cb) {
   criticalConfig.forEach(async (config) => {
     if (isUrl(config.css)) {
       config.cssString = await Axios.get(config.css)
@@ -27,4 +27,6 @@ async function criticalStart(cb) {
   cb()
 }
 
-exports.default = criticalStart
+exports.acclaimed = {
+  critical
+};
