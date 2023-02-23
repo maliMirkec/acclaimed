@@ -17,6 +17,10 @@ async function critical() {
     throw new Error('Config file should be JSON array.')
   }
 
+  if(acclaimedConfig.length > 9) {
+    emitter.setMaxListeners(0)
+  }
+
   try {
     console.log(Kleur.yellow(`Starting acclaimed...`))
 
