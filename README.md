@@ -1,4 +1,4 @@
-# Acclaimed
+# Acclaimed CSS
 
 Critical CSS for everyone!
 
@@ -24,7 +24,7 @@ acclaimed.critical()
 
 ## Configuration
 
-Acclaimed uses `.acclaimed.json` file to read the config. The example is shown below.
+Acclaimed CSS uses `.acclaimed.json` file to read the config. The example is shown below.
 
 ```json
 [{
