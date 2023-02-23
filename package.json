@@ -1,8 +1,9 @@
 {
   "name": "acclaimed",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Critical CSS for everyone.",
   "main": "index.js",
+  "author": "Silvestar Bistrović <malimirkeccita@gmail.com>",
   "homepage": "https://github.com/maliMirkec/acclaimed",
   "repository": {
     "type": "git",
@@ -14,14 +15,11 @@
   "keywords": [
     "Critical CSS"
   ],
-  "author": "Silvestar Bistrović <malimirkeccita@gmail.com>",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "axios": "^1.3.3",
     "is-url": "^1.2.4",
+    "kleur": "^4.1.5",
     "penthouse": "^2.3.3"
-  },
-  "dependencies": {
-    "kleur": "^4.1.5"
   }
 }
