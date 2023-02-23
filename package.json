@@ -3,10 +3,18 @@
   "version": "1.0.2",
   "description": "Critical CSS for everyone.",
   "main": "index.js",
+  "homepage": "https://github.com/maliMirkec/acclaimed",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/maliMirkec/acclaimed.git#main"
+  },
+  "bugs": {
+    "url": "https://github.com/maliMirkec/acclaimed/issues"
+  },
   "keywords": [
     "Critical CSS"
   ],
-  "author": "Star Bist <malimirkeccita@gmail.com>",
+  "author": "Silvestar Bistrović <malimirkeccita@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "axios": "^1.3.3",
