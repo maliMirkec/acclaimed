@@ -18,7 +18,7 @@ async function critical() {
   }
 
   if(acclaimedConfig.length > 9) {
-    emitter.setMaxListeners(0)
+    process.setMaxListeners(0)
   }
 
   try {
