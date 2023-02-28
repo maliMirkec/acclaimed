@@ -57,10 +57,9 @@ async function critical() {
       }
 
       if(cssUrls.length) {
+        config.cssString = await getCritical(cssUrls)
         config.css = false
       }
-
-      config.cssString = await getCritical(cssUrls)
 
       return await Penthouse(config)
         .then(acclaimedCss => {
