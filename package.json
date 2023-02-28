@@ -16,8 +16,12 @@
     "Critical CSS"
   ],
   "license": "MIT",
+  "bin": {
+    "acclaimed": "./acclaimed-cli.js"
+  },
   "dependencies": {
     "axios": "^1.3.3",
+    "commander": "^10.0.0",
     "is-url": "^1.2.4",
     "kleur": "^4.1.5",
     "penthouse": "^2.3.3"
