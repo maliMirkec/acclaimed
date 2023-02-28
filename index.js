@@ -75,6 +75,4 @@ async function critical() {
 
 }
 
-critical()
-
 exports.critical = critical
