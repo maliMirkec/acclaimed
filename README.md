@@ -66,4 +66,4 @@ Acclaimed CSS uses `.acclaimed.json` file to read the config. The example is sho
 
 ## Tutorial
 
-https://www.silvestar.codes/articles/how-to-use-acclaimed-package-to-extract-critical-css/
+<https://www.silvestar.codes/articles/extracting-and-using-critical-css-on-my-eleventy-site/>

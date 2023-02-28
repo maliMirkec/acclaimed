@@ -4,6 +4,7 @@ const isUrl = require('is-url')
 const Axios = require('axios')
 const Kleur = require('kleur')
 const Penthouse = require('penthouse')
+const { LOADIPHLPAPI } = require('dns')
 const acclaimedConfigPath = path.resolve('./.acclaimed.json')
 
 if(!fs.existsSync(acclaimedConfigPath)) {
@@ -11,6 +12,20 @@ if(!fs.existsSync(acclaimedConfigPath)) {
 }
 
 const acclaimedConfig = require(acclaimedConfigPath)
+
+async function getCritical(cssUrls) {
+  let promises = []
+  cssUrls.forEach(cssUrl => {
+    promises.push(new Promise((resolve, reject) => {
+      resolve(Axios.get(cssUrl))
+    }))
+  })
+
+  const res = await Promise.all(promises)
+  const data = await Promise.all(res.map(r => r.data))
+
+  return data.join('')
+}
 
 async function critical() {
   if(!acclaimedConfig.length) {
@@ -25,11 +40,27 @@ async function critical() {
     console.log(Kleur.yellow(`Starting acclaimed...`))
 
     acclaimedConfig.forEach(async (config) => {
-      if (isUrl(config.css)) {
-        config.cssString = await Axios.get(config.css)
-          .then((response) => response.data)
+      let cssUrls = []
+
+      if(Array.isArray(config.css)) {
+        config.css.forEach((configCss) => {
+          if (isUrl(configCss)) {
+            cssUrls.push(configCss)
+          } else {
+            throw new Error('The `css` option accepts only remote file, local file, or array of remote files (not array of local files).')
+          }
+        })
+      } else {
+        if (isUrl(config.css)) {
+          cssUrls.push(config.css)
+        }
+      }
+
+      if(cssUrls.length) {
         config.css = false
       }
+
+      config.cssString = await getCritical(cssUrls)
 
       return await Penthouse(config)
         .then(acclaimedCss => {
@@ -44,5 +75,7 @@ async function critical() {
   }
 
 }
+
+critical()
 
 exports.critical = critical
