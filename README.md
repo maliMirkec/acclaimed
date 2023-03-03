@@ -14,7 +14,7 @@ yarn add acclaimed
 
 ## Usage
 
-Create a new script file, include `acclaimed` package and run the `acclaimed.critical()` function.
+Either create a new script file, include `acclaimed` package and run the `acclaimed.critical()` function
 
 ```js
 const acclaimed = require('acclaimed')
@@ -22,9 +22,14 @@ const acclaimed = require('acclaimed')
 acclaimed.critical()
 ```
 
+or use the `acclaimed` command directly in your terminal.
+
 ## Configuration
 
 Acclaimed CSS uses `.acclaimed.json` file to read the config. The example is shown below.
+
+**Always put your config file in the root of the project if you are running acclaimed via script.**<br>
+**Always put your config file in the directory from which you run the `acclaimed` command in the terminal.**
 
 ```json
 [{
