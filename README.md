@@ -68,7 +68,3 @@ Acclaimed CSS uses `.acclaimed.json` file to read the config. The example is sho
 ```
 
 [All options are visible on the Penthouse site](https://github.com/pocketjoso/penthouse#options).
-
-## Tutorial
-
-<https://www.silvestar.codes/articles/extracting-and-using-critical-css-on-my-eleventy-site/>
